@@ -1,0 +1,22 @@
+db.posts.createIndex({content : "text"})   
+db.posts.find({$text : {$search : "content"}})  
+
+db.comment.createIndex({post : "text"})
+db.comment.createIndex({post : 1})  
+
+db.posts.aggregate([{$lookup:{from : "comments", localField : "_id", foreignField : "post", as : "postComments"}},{$project : {numberOfComments : {$size : "$postComments"}}}])
+db.posts.aggregate([ { $lookup: { from: "posts", localField: "_id", foreignField: "user", as: "userPosts" }}, {$unwind : "$userPosts"}, {$lookup : {from : "comments", localField : "userPosts._id", foreignField : "post", as : "postComments"}},{$group: {_id : "$_id", averageComments : {$avg : {$size : "$postComments"}}}}])
+
+1.
+db.comment.aggregate([{$facet : { totalComments : [{ $count : "count"}]}}])  
+db.post.aggregate([{$facet : { totalUsers : [{ $count : "count"}]}}])
+db.users.aggregate([{$facet : { totalUsers : [{ $count : "count"}]}}])
+
+2.
+ db.lab9.aggregate([ { $unwind: "$posts" }, { $lookup: { from: "post", localField: "posts", foreignField: "_id", as: "post" } }, { $unwind: "$post" }, { $lookup: { from: "comment", localField: "post._id", foreignField: "post", as: "comments" } }, { $project: { postId: "$post._id", numberOfComments: { $size: "$comments" } } }, { $sort: { numberOfComments: -1 } }, { $limit: 3 }] );
+
+3.
+db.post.aggregate([ { $project : { hour : { $hour : { $toDate : "$timestamp"}}, user : 1}},{ $bucket : {groupBy : "$hour", boundaries : [0, 6, 12, 18, 24], default : "Others", output : {"morning" : {$sum :1}, "afternoon" : {$sum : 1}, "evening" : {"$sum" : 1}, "night" : {$sum : 1}}}}]);  
+
+4.
+db.users.aggregate([ { $unwind: "$posts" }, { $lookup: { from: "post", localField: "posts", foreignField: "_id", as: "post" } }, { $unwind: "$post" }, { $lookup: { from: "comment", localField: "post._id", foreignField: "post", as: "comments" } }, { $group: { _id: "$_id", user: { $first: "$_id" }, totalComments: { $sum: { $size: "$comments" } }, totalPosts: { $sum: 1 } } }, { $project: { user: 1, averageCommentsPerPost: { $divide: ["$totalComments", "$totalPosts"] } } }] );

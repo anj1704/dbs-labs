@@ -1,0 +1,10 @@
+db.comment.find({timestamp: {$gte:'2024-02-01T00:00:00Z', $lte:'2024-02-28T23:59:59'}}).pretty()
+
+var idno = db.users.findOne({"username" : "user_name10"})._id  
+db.post.find({user: idno})      
+
+db.comment.insertOne({_id : "commentID21", post : "postId20", user : "uniqueUserID1", content : "Hi"})
+
+db.users.update({_id: "uniqueUserId9"}, {$set: {bio : "HELLOOLO"}})
+
+db.comment.deleteMany({user: "uniqueUserId10"})

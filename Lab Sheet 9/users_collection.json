@@ -1,0 +1,152 @@
+[
+    {
+        "_id": "uniqueUserId1",
+        "username": "user_name1",
+        "email": "user1@example.com",
+        "fullName": "Full Name 1",
+        "bio": "Short user biography 1",
+        "posts": [
+            "postId1",
+            "postId2"
+        ],
+        "comments": [
+            "commentId1",
+            "commentId2"
+        ]
+    },
+    {
+        "_id": "uniqueUserId2",
+        "username": "user_name2",
+        "email": "user2@example.com",
+        "fullName": "Full Name 2",
+        "bio": "Short user biography 2",
+        "posts": [
+            "postId3",
+            "postId4"
+        ],
+        "comments": [
+            "commentId3",
+            "commentId4"
+        ]
+    },
+    {
+        "_id": "uniqueUserId3",
+        "username": "user_name3",
+        "email": "user3@example.com",
+        "fullName": "Full Name 3",
+        "bio": "Short user biography 3",
+        "posts": [
+            "postId5",
+            "postId6"
+        ],
+        "comments": [
+            "commentId5",
+            "commentId6"
+        ]
+    },
+    {
+        "_id": "uniqueUserId4",
+        "username": "user_name4",
+        "email": "user4@example.com",
+        "fullName": "Full Name 4",
+        "bio": "Short user biography 4",
+        "posts": [
+            "postId7",
+            "postId8"
+        ],
+        "comments": [
+            "commentId7",
+            "commentId8"
+        ]
+    },
+    {
+        "_id": "uniqueUserId5",
+        "username": "user_name5",
+        "email": "user5@example.com",
+        "fullName": "Full Name 5",
+        "bio": "Short user biography 5",
+        "posts": [
+            "postId9",
+            "postId10"
+        ],
+        "comments": [
+            "commentId9",
+            "commentId10"
+        ]
+    },
+    {
+        "_id": "uniqueUserId6",
+        "username": "user_name6",
+        "email": "user6@example.com",
+        "fullName": "Full Name 6",
+        "bio": "Short user biography 6",
+        "posts": [
+            "postId11",
+            "postId12"
+        ],
+        "comments": [
+            "commentId11",
+            "commentId12"
+        ]
+    },
+    {
+        "_id": "uniqueUserId7",
+        "username": "user_name7",
+        "email": "user7@example.com",
+        "fullName": "Full Name 7",
+        "bio": "Short user biography 7",
+        "posts": [
+            "postId13",
+            "postId14"
+        ],
+        "comments": [
+            "commentId13",
+            "commentId14"
+        ]
+    },
+    {
+        "_id": "uniqueUserId8",
+        "username": "user_name8",
+        "email": "user8@example.com",
+        "fullName": "Full Name 8",
+        "bio": "Short user biography 8",
+        "posts": [
+            "postId15",
+            "postId16"
+        ],
+        "comments": [
+            "commentId15",
+            "commentId16"
+        ]
+    },
+    {
+        "_id": "uniqueUserId9",
+        "username": "user_name9",
+        "email": "user9@example.com",
+        "fullName": "Full Name 9",
+        "bio": "Short user biography 9",
+        "posts": [
+            "postId17",
+            "postId18"
+        ],
+        "comments": [
+            "commentId17",
+            "commentId18"
+        ]
+    },
+    {
+        "_id": "uniqueUserId10",
+        "username": "user_name10",
+        "email": "user10@example.com",
+        "fullName": "Full Name 10",
+        "bio": "Short user biography 10",
+        "posts": [
+            "postId19",
+            "postId20"
+        ],
+        "comments": [
+            "commentId19",
+            "commentId20"
+        ]
+    }
+]
